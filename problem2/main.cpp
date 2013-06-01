@@ -20,4 +20,5 @@ int main(int argc, char** argv)
 		printf("%u ", new_fib);
 	}
 	printf("\n%u\n", sum);
+	return 0;
 }

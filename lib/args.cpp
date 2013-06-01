@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int solve(unsigned long long n);
+#include <assert.h>
+#include <vector>
+#include <set>
+
+typedef unsigned long long ull_t;
+
+int solve(ull_t n);
 
 int main(int argc, char** argv)
 {
-	unsigned long long n = atoll(argv[1]);
+	ull_t n = atoll(argv[1]);
 	return solve(n);
 }
 
@@ -15,3 +21,13 @@ int main(int argc, char** argv)
 #define dprintf(...)
 #endif
 
+bool check_result(bool precond, bool success)
+{
+	if(precond) {
+		if(!success) {
+			fprintf(stderr, "Invalid result!\n");
+			return false;
+		}
+	}
+	return true;
+}

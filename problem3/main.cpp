@@ -46,6 +46,7 @@ int solve(unsigned long long n)
 			printf("%llu * %llu = %llu\n", fac, n / fac, n);
 			if(solve(n / fac)) {
 				printf("Factor: %llu\n", n / fac);
+				check_result(n == 13195, n / fac == 29);
 			}
 			return 0;
 #endif
