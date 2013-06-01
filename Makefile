@@ -1,13 +1,16 @@
-CXXFLAGS=-std=c++11
+CXXFLAGS=-std=c++11 -Wall -O2
 
 default: all tests
 
 all: problem1/main problem2/main problem3/main problem4/main problem5/main \
-	problem6/main problem7/main
+	problem6/main problem7/main problem8/main problem9/main \
+	problem10/main
 
 .PHONY: tests clean
 
 tests: test1 test2 test3 test4 test5
+
+libs: lib/args.cpp lib/prime.cpp
 
 test1: problem1/main
 	$< 10
@@ -35,6 +38,16 @@ test6: problem6/main
 test7: problem7/main
 	$< 6
 	$< 10001
+
+test8: problem8/main
+	$< 0
+
+test9: problem9/main
+	$< 0
+
+test10: problem10/main libs
+	$< 10
+	$< 2000000
 
 clean:
 	rm -f problem*/main
