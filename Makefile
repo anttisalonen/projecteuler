@@ -2,7 +2,8 @@ CXXFLAGS=-std=c++11
 
 default: all tests
 
-all: problem1/main problem2/main problem3/main problem4/main problem5/main
+all: problem1/main problem2/main problem3/main problem4/main problem5/main \
+	problem6/main problem7/main
 
 .PHONY: tests clean
 
@@ -26,6 +27,14 @@ test4: problem4/main
 test5: problem5/main
 	$< 10
 	$< 20
+
+test6: problem6/main
+	$< 10
+	$< 100
+
+test7: problem7/main
+	$< 6
+	$< 10001
 
 clean:
 	rm -f problem*/main
