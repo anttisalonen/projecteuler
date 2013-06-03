@@ -4,7 +4,7 @@ default: all tests
 
 all: problem1/main problem2/main problem3/main problem4/main problem5/main \
 	problem6/main problem7/main problem8/main problem9/main \
-	problem10/main problem11/main problem12/main
+	problem10/main problem11/main problem12/main problem14/main
 
 .PHONY: tests clean
 
@@ -55,6 +55,9 @@ test11: problem11/main
 test12: problem12/main
 	$< 5
 	$< 500
+
+test14: problem14/main
+	$< 1000000
 
 clean:
 	rm -f problem*/main

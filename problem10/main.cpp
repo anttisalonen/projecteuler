@@ -36,6 +36,7 @@ int solve(ull_t n)
 		primes_sum += p;
 	}
 	printf("Sum of primes up to %llu = %llu\n", n, primes_sum);
+	printf("Largest found prime: %llu\n", primes.back());
 	check_result(n == 10, primes_sum == 17);
 	return 0;
 }
